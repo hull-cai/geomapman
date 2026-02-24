@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manchester Geological Map</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <div>
+          <h1>Manchester Geological Map</h1>
+          <p>
+            OpenStreetMap basemap + British Geological Survey 1:50 000 WMS layers.
+          </p>
+        </div>
+        <button id="retryBtn" type="button" title="Retry loading geology tiles">
+          Retry geology layers
+        </button>
+      </header>
+
+      <main class="map-layout">
+        <aside class="info-panel" aria-label="Map usage help">
+          <h2>How to use</h2>
+          <ul>
+            <li>Use the top-right layer control to toggle geology themes.</li>
+            <li>Click the map to query visible geology layers.</li>
+            <li>
+              Popups show attributes returned by BGS (e.g., unit name, age,
+              classification where available).
+            </li>
+          </ul>
+          <p id="statusText" class="status status--ok" role="status" aria-live="polite">
+            Geology layers are ready.
+          </p>
+        </aside>
+        <section class="map-panel">
+          <div id="map" aria-label="Interactive Manchester geological map"></div>
+        </section>
+      </main>
+    </div>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>

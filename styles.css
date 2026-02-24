@@ -1,0 +1,142 @@
+:root {
+  color-scheme: light;
+  --bg: #f3f6fb;
+  --card: #ffffff;
+  --text: #1d2530;
+  --muted: #5b6675;
+  --border: #d9e0ea;
+  --ok: #146c2e;
+  --warn: #8c2f00;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.app-shell {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--card);
+}
+
+.app-header h1 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.app-header p {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+#retryBtn {
+  border: 1px solid var(--border);
+  background: #eef3ff;
+  color: #264189;
+  border-radius: 8px;
+  padding: 0.55rem 0.8rem;
+  cursor: pointer;
+}
+
+#retryBtn:hover {
+  background: #e3ebff;
+}
+
+.map-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  flex: 1;
+}
+
+.info-panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.info-panel h2 {
+  margin-top: 0;
+  font-size: 1rem;
+}
+
+.info-panel ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+}
+
+.status {
+  margin-top: 1rem;
+  font-weight: 600;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+}
+
+.status--ok {
+  background: #eaf8ee;
+  color: var(--ok);
+}
+
+.status--warn {
+  background: #fff3ec;
+  color: var(--warn);
+}
+
+.map-panel {
+  min-height: 70dvh;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+  min-height: 70dvh;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.popup-grid {
+  margin: 0;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.35rem 0.7rem;
+}
+
+.popup-grid dt {
+  font-weight: 700;
+}
+
+.popup-grid dd {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .map-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .map-panel,
+  #map {
+    min-height: 65dvh;
+  }
+}
